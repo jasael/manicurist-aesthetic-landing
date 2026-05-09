@@ -1,0 +1,132 @@
+---
+import { Sparkles, Menu, X } from '@lucide/astro';
+---
+
+<header id="main-header" class="fixed top-0 left-0 w-full z-50 transition-all duration-500 py-6">
+  <div class="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
+    <!-- Brand Logo -->
+    <a href="/" class="flex items-center gap-2 group z-50">
+      <Sparkles class="w-5 h-5 text-accent group-hover:rotate-12 transition-transform duration-300" />
+      <span class="font-serif text-2xl tracking-[0.15em] text-gradient-rose font-medium">AURA</span>
+      <span class="text-xs font-sans tracking-[0.3em] uppercase text-secondary-muted/80 ml-1 mt-1 hidden xs:inline">Nail Atelier</span>
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex items-center gap-8 font-sans text-xs tracking-[0.15em] uppercase font-light text-secondary/90">
+      <a href="#inicio" class="hover-underline-expand hover:text-accent transition-colors duration-300">Inicio</a>
+      <a href="#nosotros" class="hover-underline-expand hover:text-accent transition-colors duration-300">Nosotros</a>
+      <a href="#servicios" class="hover-underline-expand hover:text-accent transition-colors duration-300">Servicios</a>
+      <a href="#opiniones" class="hover-underline-expand hover:text-accent transition-colors duration-300">Opiniones</a>
+      <a href="#galeria" class="hover-underline-expand hover:text-accent transition-colors duration-300">Galería</a>
+      <a href="#contacto" class="hover-underline-expand hover:text-accent transition-colors duration-300">Contacto</a>
+    </nav>
+
+    <!-- Call to Action (Desktop) -->
+    <div class="hidden md:block">
+      <a 
+        href="#contacto" 
+        class="relative inline-flex items-center justify-center px-6 py-2.5 text-xs font-sans tracking-[0.2em] uppercase text-accent border border-accent/40 rounded-full overflow-hidden transition-all duration-500 group"
+      >
+        <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-accent/20 to-gold/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></span>
+        <span class="relative z-10 group-hover:text-white transition-colors duration-300">Reservar Turno</span>
+      </a>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button 
+      id="mobile-menu-btn" 
+      class="md:hidden text-secondary p-2 focus:outline-none z-50 relative"
+      aria-label="Toggle menu"
+    >
+      <div id="hamburger-icon" class="transition-all duration-300">
+        <Menu class="w-6 h-6 text-secondary hover:text-accent transition-colors" />
+      </div>
+      <div id="close-icon" class="hidden transition-all duration-300">
+        <X class="w-6 h-6 text-secondary hover:text-accent transition-colors" />
+      </div>
+    </button>
+  </div>
+
+  <!-- Mobile Menu Drawer (Overlay) -->
+  <div 
+    id="mobile-menu-drawer" 
+    class="fixed inset-0 w-full h-screen bg-primary/95 backdrop-blur-2xl z-40 transform translate-x-full transition-transform duration-500 ease-in-out md:hidden flex flex-col justify-center items-center"
+  >
+    <nav class="flex flex-col items-center gap-6 font-serif text-2xl tracking-widest text-center">
+      <a href="#inicio" class="mobile-nav-link text-secondary hover:text-accent transition-colors duration-300 py-1.5">Inicio</a>
+      <a href="#nosotros" class="mobile-nav-link text-secondary hover:text-accent transition-colors duration-300 py-1.5">Nosotros</a>
+      <a href="#servicios" class="mobile-nav-link text-secondary hover:text-accent transition-colors duration-300 py-1.5">Servicios</a>
+      <a href="#opiniones" class="mobile-nav-link text-secondary hover:text-accent transition-colors duration-300 py-1.5">Opiniones</a>
+      <a href="#galeria" class="mobile-nav-link text-secondary hover:text-accent transition-colors duration-300 py-1.5">Galería</a>
+      <a href="#contacto" class="mobile-nav-link text-secondary hover:text-accent transition-colors duration-300 py-1.5">Contacto</a>
+    </nav>
+    
+    <div class="mt-12">
+      <a 
+        href="#contacto" 
+        class="mobile-nav-link inline-block px-8 py-3 text-sm font-sans tracking-[0.2em] uppercase text-primary bg-accent rounded-full font-medium shadow-lg shadow-accent/20 hover:bg-accent-light transition-all duration-300"
+      >
+        Reservar Turno
+      </a>
+    </div>
+  </div>
+</header>
+
+<script>
+  // Handle Header background transition on scroll
+  const header = document.getElementById('main-header');
+  
+  window.addEventListener('scroll', () => {
+    if (header) {
+      if (window.scrollY > 50) {
+        header.classList.remove('py-6');
+        header.classList.add('py-4', 'glass', 'shadow-lg');
+      } else {
+        header.classList.remove('py-4', 'glass', 'shadow-lg');
+        header.classList.add('py-6');
+      }
+    }
+  });
+
+  // Handle Mobile Menu toggle
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenuDrawer = document.getElementById('mobile-menu-drawer');
+  const hamburgerIcon = document.getElementById('hamburger-icon');
+  const closeIcon = document.getElementById('close-icon');
+  const body = document.body;
+  const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+  function toggleMenu() {
+    if (mobileMenuDrawer && hamburgerIcon && closeIcon) {
+      const isOpen = !mobileMenuDrawer.classList.contains('translate-x-full');
+      
+      if (isOpen) {
+        mobileMenuDrawer.classList.add('translate-x-full');
+        hamburgerIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+        body.classList.remove('overflow-hidden');
+      } else {
+        mobileMenuDrawer.classList.remove('translate-x-full');
+        hamburgerIcon.classList.add('hidden');
+        closeIcon.classList.remove('hidden');
+        body.classList.add('overflow-hidden');
+      }
+    }
+  }
+
+  if (mobileMenuBtn) {
+    mobileMenuBtn.addEventListener('click', toggleMenu);
+  }
+
+  // Close menu when clicking navigation links
+  mobileNavLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      if (mobileMenuDrawer) {
+        mobileMenuDrawer.classList.add('translate-x-full');
+        if (hamburgerIcon) hamburgerIcon.classList.remove('hidden');
+        if (closeIcon) closeIcon.classList.add('hidden');
+        body.classList.remove('overflow-hidden');
+      }
+    });
+  });
+</script>

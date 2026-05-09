@@ -1,0 +1,111 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import { ArrowLeft, Sparkles } from '@lucide/astro';
+---
+
+<Layout 
+  title="Términos de Servicio | AURA Nail Atelier" 
+  description="Normas y pautas de convivencia, reservas y atención en AURA Nail Atelier."
+>
+  <Navbar />
+
+  <!-- Content Section -->
+  <section class="pt-40 pb-24 min-h-screen relative overflow-hidden">
+    <!-- Glowing backgrounds -->
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-[10%] left-[-10%] w-80 h-80 bg-accent/3 rounded-full blur-[90px]"></div>
+    </div>
+
+    <div class="max-w-4xl mx-auto px-6 relative z-10">
+      <!-- Breadcrumb / Back button -->
+      <a 
+        href="/" 
+        class="inline-flex items-center gap-2 text-xs font-sans tracking-widest uppercase text-accent hover:text-accent-light transition-colors mb-12 group"
+      >
+        <ArrowLeft class="w-3.5 h-3.5 group-hover:-translate-x-1 transition-transform" />
+        <span>Volver al inicio</span>
+      </a>
+
+      <!-- Title / Header -->
+      <div class="space-y-4 mb-16">
+        <div class="flex items-center gap-2">
+          <Sparkles class="w-4 h-4 text-accent" />
+          <span class="text-xs font-sans tracking-[0.2em] uppercase text-accent font-semibold">Legales de Confianza</span>
+        </div>
+        <h1 class="font-serif text-4xl sm:text-5xl tracking-wide text-secondary font-light">
+          Términos de <span class="text-gradient-rose italic font-normal">Servicio</span>
+        </h1>
+        <p class="font-sans text-secondary-muted text-xs uppercase tracking-widest font-light">
+          Última actualización: 8 de Mayo de 2026
+        </p>
+      </div>
+
+      <!-- Legal Text -->
+      <div class="prose prose-invert prose-sans max-w-none text-secondary-muted/95 text-sm md:text-base font-light space-y-8 leading-relaxed">
+        
+        <p class="text-secondary">
+          Te damos la bienvenida a <strong>AURA Nail Atelier</strong>. Al agendar un turno o contratar cualquiera de nuestros servicios a través de este sitio, WhatsApp, redes sociales o de manera presencial, aceptas en su totalidad los siguientes Términos de Servicio. Te solicitamos leerlos con detenimiento antes de programar tu cita.
+        </p>
+
+        <hr class="border-secondary/5" />
+
+        <div class="space-y-4">
+          <h2 class="font-serif text-2xl text-secondary tracking-wide font-normal">1. Exclusividad de Turnos</h2>
+          <p>
+            AURA es un espacio de atención personalizada. Esto significa que el horario agendado está reservado exclusivamente para vos. No sobre-vendemos turnos ni atendemos de manera simultánea en el mismo box para asegurar una atención libre de distracciones y con el máximo nivel de detalle.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <h2 class="font-serif text-2xl text-secondary tracking-wide font-normal">2. Tolerancia de Demora</h2>
+          <p>
+            Debido al rigor de tiempo requerido para realizar técnicas avanzadas como la Manicura Rusa o las Uñas Esculpidas, la puntualidad es sumamente importante. 
+          </p>
+          <ul class="list-disc list-inside space-y-2 pl-4">
+            <li>Ofrecemos un <strong>tiempo de gracia de 15 minutos</strong>.</li>
+            <li>Demoras superiores a los 15 minutos podrían resultar en la simplificación del servicio agendado (por ejemplo, omitiendo un diseño complejo o el nail art) para no afectar a la clienta siguiente, cobrándose el valor total del turno reservado.</li>
+            <li>Pasados los 20 minutos, el turno se considerará cancelado por inasistencia.</li>
+          </ul>
+        </div>
+
+        <div class="space-y-4">
+          <h2 class="font-serif text-2xl text-secondary tracking-wide font-normal">3. Salud y Bioseguridad Ungueal</h2>
+          <p>
+            La salud de tus uñas naturales es nuestra prioridad número uno. Por este motivo:
+          </p>
+          <ul class="list-disc list-inside space-y-2 pl-4">
+            <li><strong>No trabajamos sobre uñas que presenten patologías</strong> como micosis (hongos), onicólisis (uñas desprendidas), infecciones activas de la piel, o alergias graves severas.</li>
+            <li>En caso de detectar alguna anomalía que ponga en riesgo la integridad de tu salud o de los insumos del atelier, Valentina se reserva el derecho de rechazar la realización del servicio y derivarte a un profesional dermatólogo o podólogo.</li>
+          </ul>
+        </div>
+
+        <div class="space-y-4">
+          <h2 class="font-serif text-2xl text-secondary tracking-wide font-normal">4. Garantía del Servicio</h2>
+          <p>
+            Ofrecemos una <strong>garantía de satisfacción de 5 días corridos</strong> posteriores a la cita. Si durante este plazo sufrís un desprendimiento de esmaltado, rotura accidental (bajo uso razonable) de una esculpida o falla de nivelación, podés escribirnos y lo repararemos sin costo adicional. Quedan excluidos los daños causados por golpes severos, mordeduras, o manipulación de productos químicos abrasivos sin guantes.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <h2 class="font-serif text-2xl text-secondary tracking-wide font-normal">5. Métodos de Pago</h2>
+          <p>
+            Los pagos se efectúan al culminar el servicio en el atelier. Aceptamos pagos en efectivo, transferencias bancarias directas y billeteras virtuales (Mercado Pago). El atelier no realiza financiamientos ni fiados bajo ningún concepto.
+          </p>
+        </div>
+
+        <hr class="border-secondary/5" />
+
+        <div class="glass p-6 rounded-2xl border border-accent/15 mt-12 text-center max-w-2xl mx-auto">
+          <p class="font-sans text-xs text-secondary-muted font-light">
+            Cualquier duda o aclaración sobre nuestros términos podés consultarla de forma abierta con Valentina antes de iniciar la sesión de manicura. ¡Tu confort y tranquilidad son lo primero!
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

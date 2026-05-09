@@ -1,0 +1,115 @@
+---
+import { Quote, Sparkles } from '@lucide/astro';
+
+const reviews = [
+  {
+    name: 'Sofía Valenzuela',
+    role: 'Emprendedora',
+    service: 'Manicura Rusa Combinada',
+    initials: 'SV',
+    text: 'La manicura rusa de Aura me cambió las manos por completo. Antes el esmaltado me duraba una semana, ahora llego al mes con las uñas impecables y sin un solo desprendimiento. El detalle y la delicadeza de Valentina no los encontré en ningún otro lugar. Es mi momento sagrado del mes.',
+    rating: 5
+  },
+  {
+    name: 'Camila Rodriguez',
+    role: 'Diseñadora Visual',
+    service: 'Nail Art Editorial',
+    initials: 'CR',
+    text: 'Como diseñadora, soy sumamente detallista con las líneas y el color. En Aura encontré un entendimiento absoluto del minimalismo y la estética moderna. Sus diseños a mano alzada son verdaderas obras de arte, sumamente finos. Además, el atelier te transmite una paz increíble.',
+    rating: 5
+  },
+  {
+    name: 'Florencia Montes',
+    role: 'Abogada',
+    service: 'Esculpidas en Soft Gel',
+    initials: 'FM',
+    text: 'Buscaba uñas esculpidas que no parecieran toscas ni artificiales. El set de Soft Gel que me hizo Valentina quedó tan fino, natural y adaptado a mis dedos que nadie cree que sean extensiones. La higiene es impecable: abre el instrumental esterilizado delante tuyo. Un 10/10.',
+    rating: 5
+  }
+];
+---
+
+<section id="opiniones" class="py-24 bg-primary-light relative overflow-hidden">
+  <!-- Decorative background items -->
+  <div class="absolute inset-0 pointer-events-none">
+    <div class="absolute top-[20%] left-[5%] w-72 h-72 bg-accent/3 rounded-full blur-[90px]"></div>
+    <div class="absolute bottom-[20%] right-[5%] w-72 h-72 bg-gold/3 rounded-full blur-[90px]" style="animation-delay: 4s;"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+    <!-- Section Title -->
+    <div class="flex flex-col items-center text-center max-w-3xl mx-auto space-y-4 mb-16">
+      <div class="flex items-center gap-2">
+        <span class="w-8 h-[1px] bg-accent"></span>
+        <span class="text-xs font-sans tracking-[0.25em] uppercase text-accent font-medium">Experiencias Aura</span>
+        <span class="w-8 h-[1px] bg-accent"></span>
+      </div>
+      <h2 class="font-serif text-4xl md:text-5xl tracking-wide text-secondary font-light">
+        La confianza de <span class="text-gradient-rose italic font-normal">nuestras clientas</span>
+      </h2>
+      <p class="font-sans text-secondary-muted text-base tracking-wide font-light max-w-xl">
+        La satisfacción de quienes nos eligen es nuestro mayor orgullo. Conocé por qué hacen de AURA su ritual de belleza y cuidado mensual.
+      </p>
+    </div>
+
+    <!-- Grid Layout of Testimonials -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10">
+      {reviews.map((review, index) => (
+        <div 
+          class="glass rounded-3xl p-8 md:p-10 flex flex-col justify-between border border-secondary/5 hover:border-accent/10 transition-all duration-500 relative group"
+          style={`animation-delay: ${index * 0.1}s;`}
+        >
+          <!-- Quote Icon Deco -->
+          <div class="absolute top-6 right-8 text-accent/10 group-hover:text-accent/25 group-hover:scale-110 transition-all duration-500">
+            <Quote class="w-10 h-10 rotate-180" />
+          </div>
+
+          <div>
+            <!-- Star Rating -->
+            <div class="flex items-center gap-1.5 mb-6 text-gold">
+              {[...Array(review.rating)].map(() => (
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                  <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                </svg>
+              ))}
+            </div>
+
+            <!-- Review Text -->
+            <p class="font-sans text-secondary-muted text-sm md:text-base font-light leading-relaxed italic mb-8">
+              "{review.text}"
+            </p>
+          </div>
+
+          <!-- Reviewer Info -->
+          <div class="flex items-center gap-4 pt-6 border-t border-secondary/5">
+            <!-- Initials Avatar -->
+            <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-accent/20 to-gold/20 flex items-center justify-center border border-accent/30 flex-shrink-0">
+              <span class="font-sans text-xs uppercase tracking-wider text-secondary font-semibold">{review.initials}</span>
+            </div>
+            
+            <div>
+              <p class="font-sans text-sm font-semibold text-secondary">{review.name}</p>
+              <div class="flex items-center gap-1.5 text-xs text-secondary-muted">
+                <span>{review.role}</span>
+                <span class="text-accent">•</span>
+                <span class="text-accent-light/80 text-[10px] uppercase tracking-wider">{review.service}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Extra Trust Badge: Google Reviews (Simulated & Elegant) -->
+    <div class="mt-16 flex flex-col sm:flex-row items-center justify-center gap-4 text-center">
+      <div class="flex items-center gap-2">
+        <Sparkles class="w-4 h-4 text-gold" />
+        <span class="font-sans text-sm tracking-widest text-secondary uppercase font-light">Calificación promedio:</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="font-serif text-2xl text-gradient-gold font-light">4.9 / 5</span>
+        <span class="text-secondary-muted font-sans text-sm">en más de 120 opiniones de Google</span>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,186 @@
+---
+import { Sparkles, Camera } from '@lucide/astro';
+
+const galleryItems = [
+  {
+    id: 1,
+    title: "Arte Minimalista con Perlas",
+    category: "trabajos",
+    image: "/images/gallery_art_1.png",
+    aspect: "aspect-square",
+    description: "Líneas de precisión blanca con microperlas incrustadas."
+  },
+  {
+    id: 2,
+    title: "Atelier de Manicura",
+    category: "espacios",
+    image: "/images/gallery_space_1.png",
+    aspect: "aspect-square md:aspect-[3/4]",
+    description: "Estaciones individuales de mármol con instrumental esterilizado."
+  },
+  {
+    id: 3,
+    title: "Burgundy Semipermanente",
+    category: "trabajos",
+    image: "/images/gallery_art_2.png",
+    aspect: "aspect-square md:aspect-[3/4]",
+    description: "Esmaltado en tono borgoña profundo con acabado de alto brillo."
+  },
+  {
+    id: 4,
+    title: "Rincón de Pedicura Spa",
+    category: "espacios",
+    image: "/images/gallery_space_2.png",
+    aspect: "aspect-square",
+    description: "Sillones de bouclé bouclé crema con cuencos de inmersión tibios."
+  }
+];
+---
+
+<section id="galeria" class="py-24 bg-primary relative overflow-hidden z-10 border-t border-secondary/5">
+  <!-- Decorative background elements -->
+  <div class="absolute top-1/4 right-0 w-80 h-80 bg-accent/3 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute bottom-1/4 left-0 w-80 h-80 bg-secondary/3 rounded-full blur-3xl pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+    
+    <!-- Section Header -->
+    <div class="text-center max-w-2xl mx-auto mb-16 scroll-reveal">
+      <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-secondary/10 bg-secondary/5 backdrop-blur-sm mb-4">
+        <Sparkles class="w-3.5 h-3.5 text-accent" />
+        <span class="font-sans text-[10px] uppercase tracking-[0.2em] text-secondary font-medium">Inspiración</span>
+      </div>
+      <h2 class="font-serif text-3xl md:text-5xl tracking-wide text-secondary mb-6 leading-tight">
+        Detalles que <span class="text-gradient-rose italic font-medium">enamoran</span>
+      </h2>
+      <p class="font-sans text-secondary-muted text-sm md:text-base leading-relaxed font-light">
+        Explorá nuestro santuario en Palermo Soho y contemplá la delicadeza de nuestras creaciones. Un espacio donde el minimalismo cobra vida.
+      </p>
+    </div>
+
+    <!-- Filter Tabs (Minimalist Interactive Buttons) -->
+    <div class="flex justify-center items-center gap-3 md:gap-4 mb-12 scroll-reveal">
+      <button 
+        id="btn-all"
+        class="filter-btn active font-sans text-xs uppercase tracking-widest px-5 py-2.5 rounded-full border border-secondary/10 hover:border-accent/40 text-secondary-muted hover:text-secondary bg-primary-light transition-all duration-300 cursor-pointer"
+      >
+        Todo
+      </button>
+      <button 
+        id="btn-trabajos"
+        class="filter-btn font-sans text-xs uppercase tracking-widest px-5 py-2.5 rounded-full border border-secondary/10 hover:border-accent/40 text-secondary-muted hover:text-secondary bg-primary-light transition-all duration-300 cursor-pointer"
+      >
+        Nuestros Trabajos
+      </button>
+      <button 
+        id="btn-espacios"
+        class="filter-btn font-sans text-xs uppercase tracking-widest px-5 py-2.5 rounded-full border border-secondary/10 hover:border-accent/40 text-secondary-muted hover:text-secondary bg-primary-light transition-all duration-300 cursor-pointer"
+      >
+        El Atelier
+      </button>
+    </div>
+
+    <!-- Gallery Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 items-start scroll-reveal">
+      {galleryItems.map((item) => (
+        <div 
+          class={`gallery-card group relative overflow-hidden rounded-2xl bg-primary-light border border-secondary/5 shadow-sm transition-all duration-500 hover:-translate-y-1.5 hover:shadow-md hover:border-accent/20 cursor-pointer ${item.aspect}`}
+          data-category={item.category}
+        >
+          <!-- Image -->
+          <img 
+            src={item.image} 
+            alt={item.title} 
+            loading="lazy"
+            class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+          />
+          
+          <!-- Hover Overlay -->
+          <div class="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-6">
+            <div class="translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ease-out">
+              <span class="font-sans text-[9px] uppercase tracking-widest text-accent font-medium mb-1 block">
+                {item.category === 'trabajos' ? 'Nail Art' : 'Espacio'}
+              </span>
+              <h3 class="font-serif text-lg text-secondary tracking-wide mb-1 font-medium">
+                {item.title}
+              </h3>
+              <p class="font-sans text-[11px] text-secondary-muted leading-relaxed font-light">
+                {item.description}
+              </p>
+            </div>
+          </div>
+          
+          <!-- Decorative Top-Right Tag -->
+          <div class="absolute top-4 right-4 w-8 h-8 rounded-full bg-primary-light/80 backdrop-blur-sm border border-secondary/10 flex items-center justify-center opacity-80 group-hover:opacity-100 transition-opacity duration-300">
+            <Camera class="w-3.5 h-3.5 text-secondary-muted group-hover:text-accent transition-colors duration-300" />
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+<style>
+  /* Custom filter buttons active state */
+  .filter-btn.active {
+    background-color: var(--color-accent);
+    color: var(--color-primary) !important;
+    border-color: var(--color-accent);
+    box-shadow: 0 4px 12px var(--color-accent-glow);
+  }
+
+  /* Fade out / scale down classes for filtration */
+  .gallery-card.hidden-card {
+    opacity: 0;
+    transform: scale(0.92) translateY(10px);
+    pointer-events: none;
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+</style>
+
+<script>
+  function setupGalleryFilters() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const galleryCards = document.querySelectorAll('.gallery-card');
+
+    if (!filterButtons.length || !galleryCards.length) return;
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Remove active class from all buttons
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        
+        // Add active class to clicked button
+        button.classList.add('active');
+
+        const filterId = button.id;
+        
+        galleryCards.forEach(card => {
+          const category = card.getAttribute('data-category');
+          
+          if (filterId === 'btn-all') {
+            card.classList.remove('hidden-card');
+          } else if (filterId === 'btn-trabajos' && category === 'trabajos') {
+            card.classList.remove('hidden-card');
+          } else if (filterId === 'btn-espacios' && category === 'espacios') {
+            card.classList.remove('hidden-card');
+          } else {
+            card.classList.add('hidden-card');
+          }
+        });
+      });
+    });
+  }
+
+  // Run on load
+  document.addEventListener('DOMContentLoaded', setupGalleryFilters);
+  // Support Astro view transitions / lazy mounting
+  document.addEventListener('astro:after-swap', setupGalleryFilters);
+</script>

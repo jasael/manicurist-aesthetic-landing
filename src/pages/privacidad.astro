@@ -1,0 +1,113 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import { ArrowLeft, Sparkles } from '@lucide/astro';
+---
+
+<Layout 
+  title="Política de Privacidad | AURA Nail Atelier" 
+  description="Conocé cómo tratamos y protegemos tus datos personales en AURA Nail Atelier."
+>
+  <Navbar />
+
+  <!-- Content Section -->
+  <section class="pt-40 pb-24 min-h-screen relative overflow-hidden">
+    <!-- Glowing backgrounds -->
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-[10%] left-[-10%] w-80 h-80 bg-accent/3 rounded-full blur-[90px]"></div>
+    </div>
+
+    <div class="max-w-4xl mx-auto px-6 relative z-10">
+      <!-- Breadcrumb / Back button -->
+      <a 
+        href="/" 
+        class="inline-flex items-center gap-2 text-xs font-sans tracking-widest uppercase text-accent hover:text-accent-light transition-colors mb-12 group"
+      >
+        <ArrowLeft class="w-3.5 h-3.5 group-hover:-translate-x-1 transition-transform" />
+        <span>Volver al inicio</span>
+      </a>
+
+      <!-- Title / Header -->
+      <div class="space-y-4 mb-16">
+        <div class="flex items-center gap-2">
+          <Sparkles class="w-4 h-4 text-accent" />
+          <span class="text-xs font-sans tracking-[0.2em] uppercase text-accent font-semibold">Legales de Confianza</span>
+        </div>
+        <h1 class="font-serif text-4xl sm:text-5xl tracking-wide text-secondary font-light">
+          Política de <span class="text-gradient-rose italic font-normal">Privacidad</span>
+        </h1>
+        <p class="font-sans text-secondary-muted text-xs uppercase tracking-widest font-light">
+          Última actualización: 8 de Mayo de 2026
+        </p>
+      </div>
+
+      <!-- Legal Text (Beautifully Styled with Outfit) -->
+      <div class="prose prose-invert prose-sans max-w-none text-secondary-muted/95 text-sm md:text-base font-light space-y-8 leading-relaxed">
+        
+        <p class="text-secondary">
+          En <strong>AURA Nail Atelier</strong>, valoramos y respetamos profundamente tu privacidad. Esta Política de Privacidad describe cómo recopilamos, utilizamos y resguardamos tus datos personales cuando visitás nuestro sitio web, solicitás turnos a través de nuestro formulario o te comunicás vía WhatsApp con nosotros.
+        </p>
+
+        <hr class="border-secondary/5" />
+
+        <div class="space-y-4">
+          <h2 class="font-serif text-2xl text-secondary tracking-wide font-normal">1. Información que Recopilamos</h2>
+          <p>
+            Cuando utilizás nuestro formulario de reserva o te contactás directamente con el atelier, recopilamos los siguientes datos personales:
+          </p>
+          <ul class="list-disc list-inside space-y-2 pl-4">
+            <li><strong>Nombre completo:</strong> Para identificarte y agendar tu cita en nuestro sistema.</li>
+            <li><strong>Número de WhatsApp/Teléfono:</strong> Requisito indispensable para enviarte la confirmación del turno, coordinar el diseño de nail art y contactarte ante cualquier imprevisto.</li>
+            <li><strong>Preferencia de servicio y fecha:</strong> Para programar adecuadamente el tiempo de atención.</li>
+            <li><strong>Notas adicionales:</strong> Detalles o fotos de referencia de diseño que decidas compartir para preparar tu cita.</li>
+          </ul>
+        </div>
+
+        <div class="space-y-4">
+          <h2 class="font-serif text-2xl text-secondary tracking-wide font-normal">2. Uso de la Información</h2>
+          <p>
+            Utilizamos la información recopilada estrictamente para los siguientes fines:
+          </p>
+          <ul class="list-disc list-inside space-y-2 pl-4">
+            <li>Agendar, modificar o confirmar tus citas estéticas en nuestro atelier.</li>
+            <li>Comunicarnos de forma personalizada con vos para coordinar detalles del diseño o esmaltado previo.</li>
+            <li>Enviarte ofertas exclusivas, recordatorios de turnos o consejos de cuidado de uñas, únicamente si decidís suscribirte de forma voluntaria a nuestro Newsletter.</li>
+          </ul>
+        </div>
+
+        <div class="space-y-4">
+          <h2 class="font-serif text-2xl text-secondary tracking-wide font-normal">3. Protección de tus Datos</h2>
+          <p>
+            Implementamos medidas de seguridad técnicas y organizativas rigurosas para proteger tus datos personales de accesos no autorizados, pérdidas o alteraciones. No vendemos, alquilamos ni compartimos tus datos personales con terceros bajo ningún concepto comercial.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <h2 class="font-serif text-2xl text-secondary tracking-wide font-normal">4. Integración de Terceros (WhatsApp)</h2>
+          <p>
+            Al solicitar un turno, nuestro sitio facilita la redirección a la plataforma oficial de WhatsApp de AURA para completar la reserva. Recordá que el uso de WhatsApp está sujeto a los términos de privacidad provistos por la empresa Meta Platforms, Inc.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <h2 class="font-serif text-2xl text-secondary tracking-wide font-normal">5. Tus Derechos</h2>
+          <p>
+            Tenés derecho en todo momento a acceder, rectificar, actualizar o solicitar la eliminación total de tus datos personales de nuestra base de datos interna. Para ejercer estos derechos, simplemente podés enviarnos un mensaje de WhatsApp o escribirnos por email a <a href="mailto:hola@auranails.com" class="text-accent hover:underline font-normal">hola@auranails.com</a>.
+          </p>
+        </div>
+
+        <hr class="border-secondary/5" />
+
+        <div class="glass p-6 rounded-2xl border border-accent/15 mt-12 text-center max-w-2xl mx-auto">
+          <p class="font-sans text-xs text-secondary-muted font-light">
+            Al utilizar este sitio web o solicitar una cita, aceptas los términos de esta Política de Privacidad. Si tenés alguna pregunta sobre nuestra gestión de datos, no dudes en escribirnos.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

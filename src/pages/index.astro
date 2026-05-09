@@ -1,0 +1,84 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Services from '../components/Services.astro';
+import CTA from '../components/CTA.astro';
+import Testimonials from '../components/Testimonials.astro';
+import Gallery from '../components/Gallery.astro';
+import BookingContact from '../components/BookingContact.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+---
+
+<Layout 
+	title="AURA Nail Atelier | Manicura de Autor en Palermo Soho" 
+	description="Descubrí AURA, el atelier de manicura más exclusivo de Palermo. Especialistas en Manicura Rusa Combinada, Soft Gel, Acrygel y Diseños Minimalistas de Autor en un entorno de total calma."
+>
+	<!-- Navigation Header -->
+	<Navbar />
+
+	<!-- Main sections -->
+	<div class="space-y-0">
+		<Hero />
+		
+		<div class="reveal-section">
+			<About />
+		</div>
+		
+		<div class="reveal-section">
+			<Services />
+		</div>
+		
+		<div class="reveal-section">
+			<CTA />
+		</div>
+		
+		<div class="reveal-section">
+			<Testimonials />
+		</div>
+		
+		<div class="reveal-section">
+			<Gallery />
+		</div>
+		
+		<div class="reveal-section">
+			<BookingContact />
+		</div>
+	</div>
+
+	<!-- Floating Button -->
+	<WhatsAppButton />
+
+	<!-- Footer -->
+	<Footer />
+</Layout>
+
+<script>
+	// Scroll Reveal Animation logic
+	document.addEventListener('DOMContentLoaded', () => {
+		const sections = document.querySelectorAll('.reveal-section');
+		
+		const observerOptions = {
+			root: null,
+			threshold: 0.1,
+			rootMargin: '0px 0px -100px 0px' // Trigger slightly before section enters viewport
+		};
+
+		const observer = new IntersectionObserver((entries, observer) => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					entry.target.classList.add('active');
+					observer.unobserve(entry.target); // Animate only once
+				}
+			});
+		}, observerOptions);
+
+		sections.forEach(section => {
+			// Add base class for animation
+			section.classList.add('reveal-on-scroll');
+			observer.observe(section);
+		});
+	});
+</script>

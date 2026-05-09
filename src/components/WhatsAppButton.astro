@@ -1,0 +1,25 @@
+---
+import { MessageSquareText } from '@lucide/astro';
+---
+
+<div class="fixed bottom-8 right-8 z-40 group">
+  <!-- Pulsing Glow rings behind the button -->
+  <div class="absolute inset-0 rounded-full bg-accent/35 blur-md scale-110 group-hover:scale-125 animate-ping opacity-60 duration-1000"></div>
+  <div class="absolute inset-0 rounded-full bg-accent/20 blur-md scale-100 group-hover:scale-115 animate-pulse duration-700"></div>
+
+  <!-- The Button itself -->
+  <a 
+    href="https://wa.me/5491123456789?text=Hola%20Aura%20Nail%20Atelier!%20Me%20gustaría%20consultar%20por%20un%20turno."
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Contactar por WhatsApp"
+    class="relative w-14 h-14 rounded-full bg-gradient-to-r from-accent to-accent-dark flex items-center justify-center text-primary shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 z-10 cursor-pointer"
+  >
+    <MessageSquareText class="w-6 h-6 text-primary group-hover:rotate-6 transition-transform" />
+    
+    <!-- Floating Tooltip -->
+    <div class="absolute right-16 top-1/2 -translate-y-1/2 px-4 py-2 rounded-xl glass-premium text-secondary font-sans text-[10px] tracking-widest uppercase font-semibold whitespace-nowrap opacity-0 group-hover:opacity-100 -translate-x-3 group-hover:translate-x-0 transition-all duration-300 pointer-events-none">
+      Chatear con nosotros
+    </div>
+  </a>
+</div>

@@ -1,0 +1,103 @@
+---
+import { Sparkles, ArrowRight } from '@lucide/astro';
+---
+
+<section id="inicio" class="relative min-h-screen pt-32 pb-20 flex items-center overflow-hidden z-10">
+  <!-- Decorative background elements -->
+  <div class="absolute inset-0 pointer-events-none">
+    <div class="absolute top-[25%] right-[5%] w-72 h-72 bg-accent/5 rounded-full blur-[80px] animate-pulse-slow"></div>
+    <div class="absolute bottom-[10%] left-[10%] w-96 h-96 bg-gold/5 rounded-full blur-[100px] animate-pulse-slow" style="animation-delay: 4s;"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 md:px-12 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+    <!-- Left Column: Content -->
+    <div class="lg:col-span-7 flex flex-col items-start space-y-8 z-10">
+      <!-- Tag / Badge -->
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-light animate-fade-in-up" style="animation-delay: 0.1s;">
+        <Sparkles class="w-3.5 h-3.5 text-accent animate-spin-slow" />
+        <span class="text-[10px] md:text-xs font-sans tracking-[0.25em] uppercase text-accent-light font-medium">Estudio de Manicura de Autor</span>
+      </div>
+
+      <!-- Main Heading -->
+      <h1 class="font-serif text-5xl sm:text-6xl xl:text-7xl tracking-wide leading-[1.1] text-secondary font-light max-w-2xl animate-fade-in-up" style="animation-delay: 0.3s;">
+        El arte de la manicura, <br />
+        <span class="text-gradient-rose font-normal italic">redefinido para vos.</span>
+      </h1>
+
+      <!-- Subtitle Description -->
+      <p class="font-sans text-secondary-muted text-base md:text-lg tracking-wide font-light max-w-xl leading-relaxed animate-fade-in-up" style="animation-delay: 0.5s;">
+        En <span class="text-secondary font-medium">AURA</span>, creamos experiencias estéticas únicas combinando técnicas avanzadas con diseños minimalistas y sofisticados. Expresá tu identidad a través del cuidado y el arte de tus uñas.
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto animate-fade-in-up" style="animation-delay: 0.7s;">
+        <!-- Primary Book button -->
+        <a 
+          href="#contacto" 
+          class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-accent to-accent-dark text-primary font-sans text-xs tracking-[0.2em] uppercase font-bold shadow-lg shadow-accent/20 hover:shadow-xl hover:shadow-accent/30 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 group"
+        >
+          <span>Agendar una Cita</span>
+          <ArrowRight class="w-4 h-4 text-primary group-hover:translate-x-1.5 transition-transform duration-300" />
+        </a>
+
+        <!-- Secondary Services button -->
+        <a 
+          href="#servicios" 
+          class="inline-flex items-center justify-center px-8 py-4 rounded-full border border-secondary/10 bg-secondary/[0.02] hover:bg-secondary/[0.05] hover:border-secondary/20 font-sans text-xs tracking-[0.2em] uppercase font-medium text-secondary hover:text-accent transition-all duration-300"
+        >
+          Explorar Servicios
+        </a>
+      </div>
+
+      <!-- Quick Trust Indicators -->
+      <div class="grid grid-cols-3 gap-6 pt-6 border-t border-secondary/5 w-full max-w-lg animate-fade-in-up" style="animation-delay: 0.9s;">
+        <div>
+          <span class="block font-serif text-2xl text-gradient-gold font-light">5.0 ★</span>
+          <span class="text-[10px] tracking-wider uppercase text-secondary-muted">Valoraciones</span>
+        </div>
+        <div>
+          <span class="block font-serif text-2xl text-gradient-gold font-light">100%</span>
+          <span class="text-[10px] tracking-wider uppercase text-secondary-muted">Salud & Cuidado</span>
+        </div>
+        <div>
+          <span class="block font-serif text-2xl text-gradient-gold font-light">Autor</span>
+          <span class="text-[10px] tracking-wider uppercase text-secondary-muted">Diseños Exclusivos</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Column: Visual Artwork (CSS Shape & Premium Image) -->
+    <div class="lg:col-span-5 relative flex justify-center lg:justify-end z-10 mt-8 lg:mt-0">
+      <!-- Outer decorative abstract borders -->
+      <div class="absolute -top-6 -left-6 w-24 h-24 border-t border-l border-accent/20 rounded-tl-3xl pointer-events-none animate-pulse-slow"></div>
+      <div class="absolute -bottom-6 -right-6 w-24 h-24 border-b border-r border-gold/20 rounded-br-3xl pointer-events-none animate-pulse-slow" style="animation-delay: 2s;"></div>
+
+      <!-- Main Image container using CSS shapes and float animations -->
+      <div class="relative w-[320px] sm:w-[420px] aspect-square animate-float-slow">
+        <!-- Backdrop Glow behind image -->
+        <div class="absolute inset-4 rounded-full bg-gradient-to-tr from-accent/20 to-gold/20 filter blur-3xl -z-10 animate-pulse-slow"></div>
+
+        <!-- The Image Wrapper utilizing a custom fluid border-radius (shape-organic-1) -->
+        <div class="w-full h-full overflow-hidden shape-organic-1 border border-accent/15 shadow-2xl relative group">
+          <img 
+            src="/images/hero.png" 
+            alt="Uñas minimalistas con arte de oro" 
+            class="w-full h-full object-cover scale-105 group-hover:scale-110 transition-transform duration-700 ease-out"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent opacity-60"></div>
+        </div>
+
+        <!-- Float Glass Badge overlap -->
+        <div class="absolute bottom-6 -left-4 sm:-left-8 glass-premium p-4 rounded-2xl flex items-center gap-3 animate-float max-w-[190px] shadow-xl">
+          <div class="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center border border-accent/20">
+            <Sparkles class="w-5 h-5 text-accent" />
+          </div>
+          <div>
+            <p class="text-xs font-serif italic text-accent-light">Hecho a mano</p>
+            <p class="text-[10px] font-sans uppercase tracking-[0.1em] text-secondary-muted">Cada diseño es único</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

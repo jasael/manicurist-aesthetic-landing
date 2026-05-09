@@ -1,0 +1,182 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #0A0A0B; /* Deep onyx background */
+  --color-primary-light: #141416; /* Lighter onyx for cards/sections */
+  --color-primary-card: #1C1C1E; /* Even lighter for nested cards */
+  --color-secondary: #F5F5F7; /* Pearly white for text */
+  --color-secondary-muted: #A1A1AA; /* Muted gray for description text */
+  --color-accent: #E2B3A3; /* Luxurious soft rose gold */
+  --color-accent-light: #EED3C9; /* Delicate light blush */
+  --color-accent-dark: #B58474; /* Rich shadow rose gold */
+  --color-gold: #D4AF37; /* Metallic champagne gold */
+  --color-gold-light: #F3E5AB; /* Bright champagne gold */
+  
+  --font-serif: 'Cormorant Garamond', serif;
+  --font-sans: 'Outfit', sans-serif;
+  
+  --animate-pulse-slow: pulse-slow 10s ease-in-out infinite;
+  --animate-float: float 8s ease-in-out infinite;
+  --animate-float-slow: float-slow 12s ease-in-out infinite;
+  --animate-glow: glow 4s ease-in-out infinite;
+  --animate-fade-in-up: fade-in-up 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-spin-slow: spin-slow 25s linear infinite;
+
+  @keyframes pulse-slow {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 0.7; transform: scale(1.1); }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(1.5deg); }
+  }
+  @keyframes float-slow {
+    0%, 100% { transform: translateY(0px) rotate(0deg) scale(1); }
+    50% { transform: translateY(-25px) rotate(-2deg) scale(1.05); }
+  }
+  @keyframes glow {
+    0%, 100% { box-shadow: 0 0 15px rgba(226, 179, 163, 0.15); }
+    50% { box-shadow: 0 0 30px rgba(226, 179, 163, 0.35); }
+  }
+  @keyframes fade-in-up {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes spin-slow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+}
+
+/* Base custom styles and scrollbars */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-accent) var(--color-primary);
+  }
+
+  body {
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+  }
+
+  /* Custom Scrollbar for Webkit */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-primary);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--color-accent-dark) 0%, var(--color-accent) 100%);
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-accent-light);
+  }
+}
+
+/* Custom CSS Shapes and Utility Effects */
+@layer utilities {
+  /* Glassmorphism Classes */
+  .glass {
+    background: rgba(20, 20, 22, 0.45);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(226, 179, 163, 0.1);
+  }
+  
+  .glass-premium {
+    background: linear-gradient(135deg, rgba(20, 20, 22, 0.6) 0%, rgba(10, 10, 11, 0.8) 100%);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(226, 179, 163, 0.15);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  }
+
+  .glass-light {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  /* Text gradient effects */
+  .text-gradient-rose {
+    background: linear-gradient(135deg, #FFF 30%, var(--color-accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #FFF 30%, var(--color-gold) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-gradient-dual {
+    background: linear-gradient(135deg, var(--color-accent-light) 0%, var(--color-accent) 40%, var(--color-gold) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Geometric & Fluid CSS Shapes */
+  .shape-organic-1 {
+    border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+  }
+
+  .shape-organic-2 {
+    border-radius: 50% 50% 34% 66% / 56% 68% 32% 44%;
+  }
+
+  .shape-organic-3 {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  }
+
+  /* Clip-paths for innovative grids or panels */
+  .clip-diagonal-left {
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+  }
+
+  .clip-diagonal-right {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 85%);
+  }
+
+  .clip-aesthetic-card {
+    clip-path: polygon(15px 0%, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0% 15px);
+  }
+
+  /* Custom Hover Lines */
+  .hover-underline-expand {
+    position: relative;
+  }
+  .hover-underline-expand::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+    transform-origin: bottom right;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .hover-underline-expand:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+}
+
+/* Animations Trigger Classes (for Scroll-reveal) */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-on-scroll.active {
+  opacity: 1;
+  transform: translateY(0);
+}

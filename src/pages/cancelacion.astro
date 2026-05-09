@@ -1,0 +1,113 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import { ArrowLeft, Sparkles, Clock } from '@lucide/astro';
+---
+
+<Layout 
+  title="Política de Cancelación | AURA Nail Atelier" 
+  description="Conocé las pautas para cancelar o reprogramar tus turnos de manicura en AURA."
+>
+  <Navbar />
+
+  <!-- Content Section -->
+  <section class="pt-40 pb-24 min-h-screen relative overflow-hidden">
+    <!-- Glowing backgrounds -->
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-[10%] left-[-10%] w-80 h-80 bg-accent/3 rounded-full blur-[90px]"></div>
+    </div>
+
+    <div class="max-w-4xl mx-auto px-6 relative z-10">
+      <!-- Breadcrumb / Back button -->
+      <a 
+        href="/" 
+        class="inline-flex items-center gap-2 text-xs font-sans tracking-widest uppercase text-accent hover:text-accent-light transition-colors mb-12 group"
+      >
+        <ArrowLeft class="w-3.5 h-3.5 group-hover:-translate-x-1 transition-transform" />
+        <span>Volver al inicio</span>
+      </a>
+
+      <!-- Title / Header -->
+      <div class="space-y-4 mb-16">
+        <div class="flex items-center gap-2">
+          <Sparkles class="w-4 h-4 text-accent" />
+          <span class="text-xs font-sans tracking-[0.2em] uppercase text-accent font-semibold">Legales de Confianza</span>
+        </div>
+        <h1 class="font-serif text-4xl sm:text-5xl tracking-wide text-secondary font-light">
+          Política de <span class="text-gradient-rose italic font-normal">Cancelación</span>
+        </h1>
+        <p class="font-sans text-secondary-muted text-xs uppercase tracking-widest font-light">
+          Última actualización: 8 de Mayo de 2026
+        </p>
+      </div>
+
+      <!-- Legal Text -->
+      <div class="prose prose-invert prose-sans max-w-none text-secondary-muted/95 text-sm md:text-base font-light space-y-8 leading-relaxed">
+        
+        <p class="text-secondary">
+          En <strong>AURA Nail Atelier</strong>, entendemos perfectamente que tu agenda puede cambiar debido a imprevistos del día a día. Sin embargo, dado que nuestro esquema de trabajo es de atención exclusiva unitaria con bloques de tiempo de hasta 2 horas por persona, las cancelaciones de último momento o inasistencias nos impiden ocupar ese espacio con otra clienta en espera. 
+        </p>
+        <p class="text-secondary">
+          Por este motivo, implementamos una política de cancelación justa pero rigurosa para proteger la agenda de todos.
+        </p>
+
+        <hr class="border-secondary/5" />
+
+        <!-- High-light box -->
+        <div class="glass-premium p-8 rounded-3xl border border-accent/25 flex flex-col md:flex-row gap-6 items-start md:items-center my-8">
+          <div class="w-12 h-12 rounded-full bg-accent/15 flex items-center justify-center text-accent flex-shrink-0">
+            <Clock class="w-6 h-6" />
+          </div>
+          <div>
+            <h3 class="font-serif text-xl text-secondary font-normal mb-1">La regla de las 24 Horas</h3>
+            <p class="font-sans text-xs text-secondary-muted font-light leading-relaxed">
+              Podés reprogramar o cancelar tu turno sin ningún tipo de costo ni penalidad avisándonos con un mínimo de <strong>24 horas de anticipación</strong> de tu cita pactada.
+            </p>
+          </div>
+        </div>
+
+        <div class="space-y-4">
+          <h2 class="font-serif text-2xl text-secondary tracking-wide font-normal">1. Cancelaciones Fuera de Término</h2>
+          <p>
+            Si cancelás o solicitás reprogramar tu turno con <strong>menos de 24 horas</strong> de anticipación:
+          </p>
+          <ul class="list-disc list-inside space-y-2 pl-4">
+            <li>El atelier registrará la alerta de cancelación tardía en tu historial de cliente.</li>
+            <li>Para poder agendar un nuevo turno en el futuro, se solicitará de forma obligatoria el pago anticipado de una <strong>seña equivalente al 50% del valor del nuevo servicio solicitado</strong> vía transferencia, la cual se descontará del pago final.</li>
+          </ul>
+        </div>
+
+        <div class="space-y-4">
+          <h2 class="font-serif text-2xl text-secondary tracking-wide font-normal">2. Inasistencia Sin Aviso (No-Show)</h2>
+          <p>
+            En caso de no asistir al turno y no haber enviado ningún tipo de mensaje previo (no-show):
+          </p>
+          <ul class="list-disc list-inside space-y-2 pl-4">
+            <li>La cita se considerará cancelada automáticamente pasados los 20 minutos de demora.</li>
+            <li>Para poder volver a atenderte en nuestro atelier, deberás saldar el <strong>50% del valor del servicio perdido</strong> en concepto de penalidad, y abonar el <strong>50% de seña para el nuevo turno</strong>.</li>
+            <li>La acumulación de dos (2) inasistencias sin aviso provocará la baja definitiva de tu perfil en nuestro atelier, impidiendo futuras reservas.</li>
+          </ul>
+        </div>
+
+        <div class="space-y-4">
+          <h2 class="font-serif text-2xl text-secondary tracking-wide font-normal">3. ¿Cómo Cancelar o Reprogramar?</h2>
+          <p>
+            Podés avisarnos por cualquiera de nuestras vías de comunicación directas, aunque damos absoluta prioridad de respuesta inmediata al canal de <strong>WhatsApp (+54 9 11 2345-6789)</strong>. No se consideran válidas las cancelaciones realizadas comentando publicaciones de redes sociales (Instagram o TikTok).
+          </p>
+        </div>
+
+        <hr class="border-secondary/5" />
+
+        <div class="glass p-6 rounded-2xl border border-accent/15 mt-12 text-center max-w-2xl mx-auto">
+          <p class="font-sans text-xs text-secondary-muted font-light">
+            Agradecemos profundamente tu empatía, comprensión y respeto por el tiempo de trabajo que dedicamos a cada una de ustedes en AURA Nail Atelier. ¡Te esperamos para regalarte una sesión inigualable!
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
