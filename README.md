@@ -1,46 +1,31 @@
-# Astro Starter Kit: Basics
+# Manicurist Aesthetic Landing
 
-```sh
-npm create astro@latest -- --template basics
-```
+Sitio web optimizado para servicios de manicuría y estética de uñas. Pensado para cautivar visualmente a las clientas, el sitio muestra un portafolio de trabajos de alta calidad, un listado claro de servicios (esculpidas, esmaltado semipermanente, nail art), reseñas destacadas y opciones sencillas para solicitar un turno.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 🚀 Tecnologías
 
-## 🚀 Project Structure
+- **[Astro](https://astro.build/)**: Para una experiencia de usuario rápida.
+- **[Tailwind CSS](https://tailwindcss.com/)**: Diseño visual moderno.
+- **[Lucide Astro](https://lucide.dev/)**: Iconografía elegante.
+- **[Astro Sitemap](https://docs.astro.build/en/guides/integrations-guide/sitemap/)**: Mejor visibilidad en buscadores.
 
-Inside of your Astro project, you'll see the following folders and files:
+## 🧞 Comandos
+
+| Comando | Acción |
+| :--- | :--- |
+| `npm install` | Instala dependencias |
+| `npm run dev` | Servidor local |
+| `npm run build` | Construcción final |
+| `npm run preview` | Previsualizar build |
+
+## 📁 Estructura
 
 ```text
 /
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
+├── public/          # Galería de fotos y logos
+├── src/
+│   ├── components/  # Secciones (Servicios, Reviews, etc.)
+│   ├── layouts/     # Contenedor principal
+│   └── pages/       # Rutas
 └── package.json
 ```
-
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
